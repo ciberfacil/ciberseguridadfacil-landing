@@ -6,6 +6,9 @@
 <title>CiberseguridadFácil — La seguridad que se queda cuando decides</title>
 <meta name="description" content="Formación en ciberseguridad presencial, online, LMS y microlearning. Ayudamos a que los buenos hábitos digitales permanezcan cuando de verdad importan." />
 
+<!-- Preload prioritario para la foto del Hero sin cambiar de extensión -->
+<link rel="preload" as="image" href="hero-principal.jpg" fetchpriority="high">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -388,9 +391,9 @@
     .org-leaves{grid-template-columns:1fr;}
   }
 
-  /* -------- ZONA RESTRINGIDA (AZUL COBALTO/MARINO EXACTO + RESPLANDOR CIAN DE SERGEI) -------- */
+  /* -------- ZONA RESTRINGIDA (AZUL COBALTO PROFUNDO + CIAN NEÓN DE SERGEI) -------- */
   .restricted-zone {
-    background-color: #0B2238; /* Azul cobalto/marino profundo real de la pantalla de Sergei */
+    background-color: #0B2238;
     background-image: 
       radial-gradient(circle at 75% 35%, rgba(0, 229, 255, 0.22) 0%, rgba(11, 34, 56, 0.8) 55%, #0B2238 100%),
       linear-gradient(to right, rgba(0, 229, 255, 0.04) 1px, transparent 1px),
@@ -446,7 +449,7 @@
     flex-wrap: wrap;
   }
   .btn-dark-glow {
-    background: #00E5FF; /* Cian neón brillante idéntico a las luces de Sergei */
+    background: #00E5FF;
     color: #071728;
     padding: 14px 28px;
     border-radius: 8px;
@@ -538,7 +541,8 @@
         </div>
       </div>
       <div class="hero-photo reveal">
-        <img src="hero-principal.jpg" alt="Ciberseguridad Fácil">
+        <!-- Carga prioritaria inmediata manteniendo hero-principal.jpg -->
+        <img src="hero-principal.jpg" alt="Ciberseguridad Fácil" fetchpriority="high" decoding="async">
       </div>
     </div>
   </div>
@@ -613,7 +617,8 @@
         </div>
       </div>
       <div class="editorial-media">
-        <img src="microlearning-telefono.png" alt="Microlecciones Ciberseguridad Fácil">
+        <!-- Carga diferida manteniendo microlearning-telefono.png -->
+        <img src="microlearning-telefono.png" alt="Microlecciones Ciberseguridad Fácil" loading="lazy" decoding="async">
       </div>
     </div>
 
@@ -642,7 +647,8 @@
         </div>
       </div>
       <div class="editorial-media">
-        <img src="kit-escritorio.jpg" alt="Kit de escritorio Ciberseguridad Fácil">
+        <!-- Carga diferida manteniendo kit-escritorio.jpg -->
+        <img src="kit-escritorio.jpg" alt="Kit de escritorio Ciberseguridad Fácil" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -761,11 +767,12 @@
   </div>
 </section>
 
-<!-- DEMO BLINDADA (AZUL COBALTO PROFUNDO + CIAN NEÓN EXACTO DE SERGEI) -->
+<!-- DEMO BLINDADA (AZUL COBALTO PROFUNDO + CIAN NEÓN DE SERGEI) -->
 <section style="padding: 40px 0;">
   <div class="wrap">
     <div class="restricted-zone reveal">
-      <img src="sergei-hacker.jpg" alt="" class="sergei-overlay-img">
+      <!-- Carga diferida manteniendo sergei-hacker.jpg -->
+      <img src="sergei-hacker.jpg" alt="" class="sergei-overlay-img" loading="lazy" decoding="async">
       
       <div class="restricted-content">
         <div class="restricted-badge">
